@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="456c2533-0242-46e4-93ee-a34e2ddb5cbb" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercicios/calculador_de_tempo_de_vida.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercicios/calculador_de_tempo_de_vida.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/praticas_e_anotacoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/praticas_e_anotacoes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,23 +22,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2lL8pmWho0Sl2JrDT19n094aDGX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.calculador_de_tempo_de_vida.executor": "Run",
-    "Python.praticas_e_anotacoes.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.calculador_de_tempo_de_vida.executor&quot;: &quot;Run&quot;,
+    &quot;Python.praticas_e_anotacoes.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.calculador_de_tempo_de_vida">
     <configuration name="calculador_de_tempo_de_vida" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercicios_proprios" />
