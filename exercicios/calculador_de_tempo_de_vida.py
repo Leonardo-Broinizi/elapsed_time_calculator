@@ -24,6 +24,7 @@ ano_natal = mês_natal = dia_natal = anos = meses = dias = meses_totais = dias_t
 níver = níver_hoje = mesversário = bissexto = False
 # dias_meses = {'jan' : 31, 'fev' : 28, 'mar' : 31, 'abr' : 30, 'mai' : 31, 'jun' : 30, 'jul' : 31, 'ago' : 31, 'set' : 30, 'out' : 31, 'nov' : 30, 'dez' : 31}
 dias_meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
 def cabeçalho():
     print(f'\033[1;34m{'-=-' * 15}')
     print(f'\033[31m{'> > > > \033[33mCALCULADOR DE TEMPO VIVIDO\033[31m < < < <':^45}')
@@ -66,34 +67,39 @@ def recebe_valida_data(bissexto): # Nesta função, como o nome diz, eu recebo e
             break
 
 def verifica_níver(níver, níver_hoje, mesversário):
-    if int(mês_natal) < mês and ano != ano_natal: # Verificador se já fez aniversário este ano:
+    if int(mês_natal) < mês and ano != ano_natal: # Verifica se já fez aniversário
         níver = True
     elif int(mês_natal) == mês and int(dia_natal) < dia and ano != ano_natal:
         níver = True
-    elif int(mês_natal) == mês and int(dia_natal) == dia:
+    elif int(mês_natal) == mês and int(dia_natal) == dia and ano != ano_natal:
         níver_hoje = True
-    if int(dia_natal) < dia:
+
+    if int(dia_natal) < dia and mês != int(mês_natal): # Verifica se já fez mesversário
         mesversário = True
     return níver, níver_hoje, mesversário
 
 def contador(dias):
+    bissexto = False
+    if ano % 4 == 0 and ano % 100 != 0:  # Verificador do ano bissexto:
+        bissexto = True
+        dias_meses[1] = 29
+    elif ano % 400 == 0:
+        bissexto = True
+        dias_meses[1] = 29
 
-    if níver_hoje:
-        anos = ano - int(ano_natal)
-        meses = 0 # linha desnecessária mas preferi deixar explícito, até pra me situar
-        dias = 0
-    elif níver:
-        anos = ano - int(ano_natal)
-        meses = mês - int(mês_natal)
-        dias = dia - int(dia_natal)
-    else:
-        anos = ano - int(ano_natal) - 1
-        meses = mês - int(mês_natal) + 1
-        meses = - meses
-        dias = int(dia_natal) + (dias_meses[mês - 1] - dia)
+    if níver:
+        if níver_hoje:
+            dias, meses = 0
+            anos = ano - int(ano_natal)
+        elif níver:
+            if mesversário and int(dia_natal) <= dia:
+                anos = ano - int(ano_natal)
+                meses = mês - int(mês_natal)
+                dias = dia - int(dia_natal)
+
 
     print(f'anos: {anos}, meses: {meses}, dias: {dias} ')
-    print(f'níver: {níver}, dia: {dia}, dia_natal: {dia_natal}')
+    print(f'Dias_meses: {dias_meses}')
     return dias, meses, anos, dias_totais, meses_totais
 
 
@@ -125,13 +131,12 @@ while True:
     mesversário = aniversário[2]
 
 
-    if níver_hoje:
+    if níver_hoje and int(ano_natal) != ano:
         print('Parabéns, você está fazendo aniversário hoje!')
-    elif ano == ano_natal:
+    elif níver_hoje and ano == int(ano_natal):
         print('Nasceu hoje!')
 
     tempo = contador(dias)
-    print(tempo)
     while True:
         res = str(input('Quer verificar a contagem de tempo de vida de mais alguém? [S/N] ')).strip().upper()
         if res not in 'SN' or res == '':
@@ -144,6 +149,30 @@ while True:
 
 
 
+
+
+'''    if níver_hoje:
+        anos = ano - int(ano_natal)
+        meses = 0 # linha desnecessária mas preferi deixar explícito, até pra me situar
+        dias = 0
+    elif níver and mesversário:
+        print('elif níver and mesversário')
+        anos = ano - int(ano_natal)
+        meses = mês - int(mês_natal)
+        dias = dia - int(dia_natal)
+    elif níver and not mesversário:
+        print('elif níver and not mesversáirio')
+        anos = ano - int(ano_natal)
+        meses = mês - int(mês_natal)
+    elif mesversário:
+        print('mesversário')
+        anos = ano - int(ano_natal) - 1
+        meses = int(mês_natal) - mês - 1
+        dias = int(dia_natal) + (dias_meses[mês - 1] - dia)
+    else:
+        anos = ano - int(ano_natal) - 1
+        meses = int(mês_natal) - mês
+        dias = int(dia_natal) + (dias_meses[mês - 1] - dia)'''
 
 
 
