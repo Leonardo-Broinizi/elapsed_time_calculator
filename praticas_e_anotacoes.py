@@ -35,3 +35,15 @@ else:
     (f'0{date.today().day}/0{date.today().month}/{date.today().year}')
 print(data_em_texto)'''
 
+def calcular_media(*numeros):
+    soma = sum(numeros)
+    quantidade = len(numeros)
+    media = soma / quantidade
+    return media
+
+print('Media: ', calcular_media(10, 20, 30))
+
+quadrado = lambda x: x ** 2
+print('Olá, mundo!')
+print(quadrado(5))
+
